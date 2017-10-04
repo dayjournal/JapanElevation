@@ -4,6 +4,8 @@
 Display elevation value of specified position on QGIS.  
 Using [Elevation API](http://maps.gsi.go.jp/development/api.html) by Geospatial Information Authority of Japan.  
 
+[QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/JapanElevation)  
+
 <br/>
 
 ## Usage
@@ -33,6 +35,8 @@ Copyright (c) 2017 Yasunori Kirimoto
 
 QGISで指定位置の標高値を表示  
 国土地理院の[標高API](http://maps.gsi.go.jp/development/api.html)を利用
+
+[QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/JapanElevation)  
 
 <br/>
 
