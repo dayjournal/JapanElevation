@@ -6,25 +6,28 @@
  Display elevation value of specified position on QGIS.  
  Using Elevation API by Geospatial Information Authority of Japan.  
                               -------------------
-        begin                : 2017-05-06
+        begin                : 2018-03-14
         git sha              : $Format:%H$
-        copyright            : (C) 2017 by Yasunori Kirimoto
+        copyright            : (C) 2018 by Yasunori Kirimoto
         email                : contact@day-journal.com
         license              : GNU General Public License v2.0
  ***************************************************************************/
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QAction
 from qgis.core import *
 from qgis.gui import *
-import resources
-from JapanElevation_dialog import JapanElevationDialog
+
+from .resources import *
+from .JapanElevation_dialog import JapanElevationDialog
+
 import os.path
 import os
 import sys
 import codecs
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import json
 
 class JapanElevation:
@@ -94,6 +97,7 @@ class JapanElevation:
     def run(self):
         self.toolClick = QgsMapToolClick(self.iface, self.canvas, self.dlg)
         self.canvas.setMapTool(self.toolClick)
+
 class QgsMapToolClick(QgsMapTool):
     def __init__(self, iface, canvas, dlg):
         QgsMapTool.__init__(self, canvas)
@@ -105,12 +109,12 @@ class QgsMapToolClick(QgsMapTool):
         dPos = mouseEvent.pos()
         mPosBefore = self.toMapCoordinates(dPos)
         destcrs = self.iface.mapCanvas().mapSettings().destinationCrs()
-        Tf = QgsCoordinateTransform(destcrs,QgsCoordinateReferenceSystem(4326))
+        Tf = QgsCoordinateTransform(destcrs, QgsCoordinateReferenceSystem(4326), QgsProject.instance())
         mPos = Tf.transform(mPosBefore)
         lon = mPos.x()
         lat = mPos.y()
         URL = "http://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php?lon=" + str(lon) + "&lat=" + str(lat) +"&outtype=JSON"
-        data_all = urllib2.urlopen(URL)
+        data_all = urllib.request.urlopen(URL)
         data = json.loads(data_all.read())
         elevationall = str(data['elevation'])+ u' m'
         elevationtext = data[u'hsrc']
