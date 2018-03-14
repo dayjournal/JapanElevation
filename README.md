@@ -1,7 +1,7 @@
 # JapanElevation
 ![README01](./img/README01.png)
 
-Display elevation value of specified position on QGIS.  
+Display elevation value of specified position on QGIS.(QGISv2)  
 Using [Elevation API](http://maps.gsi.go.jp/development/api.html) by Geospatial Information Authority of Japan.  
 
 [QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/JapanElevation)  
@@ -33,7 +33,7 @@ Copyright (c) 2017 Yasunori Kirimoto
 # 標高値取得
 ![README01](./img/README01.png)
 
-QGISで指定位置の標高値を表示  
+QGISで指定位置の標高値を表示(QGISv2)  
 国土地理院の[標高API](http://maps.gsi.go.jp/development/api.html)を利用
 
 [QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/JapanElevation)  
