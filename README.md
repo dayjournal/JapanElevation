@@ -10,6 +10,11 @@ Using [Elevation API](http://maps.gsi.go.jp/development/api.html) by Geospatial 
 
 <br/>
 
+### Other country version  
+[AustrianElevation](https://github.com/maegger/AustrianElevation)
+
+<br/>
+
 ## Usage
 ![README02](./img/README02.gif)
 - Click "JapanElevation".
