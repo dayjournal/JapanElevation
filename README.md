@@ -49,6 +49,11 @@ QGISで指定位置の標高値を表示(QGISv3)
 
 <br/>
 
+### 他の国のバージョン  
+[AustrianElevation](https://github.com/maegger/AustrianElevation)
+
+<br/>
+
 ##  使用方法
 ![README02](./img/README02.gif)
 - JapanElevationボタンクリック  
