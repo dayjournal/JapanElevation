@@ -4,7 +4,7 @@ name=JapanElevation
 qgisMinimumVersion=2.14
 description=JapanElevation
 version=1.0
-author=YasunoriKirimoto
+author=Yasunori Kirimoto
 email=contact@day-journal.com
 
 about=Display elevation value of specified position on QGIS. Using Elevation API by Geospatial Information Authority of Japan.  
